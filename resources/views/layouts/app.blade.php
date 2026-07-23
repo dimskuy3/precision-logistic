@@ -14,12 +14,8 @@
             <div class="flex justify-between items-center h-16">
 
                 <div class="flex items-center space-x-3">
-                    <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 10V7" />
-                    </svg>
-                    <span class="text-lg font-bold tracking-wide">PT. Precision Logistic</span>
-                </div>
+    <img src="{{ asset('images/logo.png') }}" alt class="h24 object-scale-down">
+</div>
 
                 <div class="hidden md:flex items-center space-x-1">
                     <a href="{{ route('dashboard') }}"

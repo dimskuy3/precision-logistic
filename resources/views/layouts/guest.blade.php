@@ -14,17 +14,26 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
+    <body class="font-sans antialiased">
+    <div class="min-h-screen bg-cover bg-center flex items-center justify-center relative"
+         style="background-image: url('{{ asset('images/prelogin.jpg') }}');">
+
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/50"></div>
+
+        <!-- Login Card -->
+        <div class="relative w-full max-w-md px-8 py-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl">
+
+            <div class="flex justify-center mb-6">
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-70 h-70 object-contain">
                 </a>
             </div>
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
+            {{ $slot }}
+
         </div>
-    </body>
+
+    </div>
+</body>
 </html>
