@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,6 +10,8 @@ class PolData extends Model
 
     protected $table = 'pol_data';
 
+    protected $primaryKey = 'pol_id';
+
     protected $fillable = [
         'status',
         'booking_date',
@@ -18,7 +19,7 @@ class PolData extends Model
         'sales',
         'kode_origin',
         'origin',
-        'created_by',
+        'user_id',
     ];
 
     protected function casts(): array
@@ -30,7 +31,7 @@ class PolData extends Model
 
     public function creator()
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function scopeFilter($query, array $filters)

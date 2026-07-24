@@ -44,7 +44,7 @@ class PolDataController extends Controller
     {
         PolData::create(array_merge(
             $request->validated(),
-            ['created_by' => auth()->id()]
+            ['user_id' => auth()->id()]
         ));
 
         return redirect()->route('pol.index')

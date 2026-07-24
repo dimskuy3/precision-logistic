@@ -10,6 +10,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $primaryKey = 'user_id';
+
     protected $fillable = [
         'name',
         'email',
@@ -42,6 +44,6 @@ class User extends Authenticatable
 
     public function polData()
     {
-        return $this->hasMany(PolData::class, 'created_by');
+        return $this->hasMany(PolData::class, 'user_id');
     }
 }
